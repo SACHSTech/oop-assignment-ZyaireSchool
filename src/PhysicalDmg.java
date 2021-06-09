@@ -16,4 +16,9 @@ public class PhysicalDmg extends DamageOutput{
   public int getTimeUsePhy(){
     return this.timeUsePhy;
   }
+
+  public String toString(){
+    System.out.println("You used" + skillNamePhy() + "for" + theTimesUsePhy + "times.");
+    return "";
+  }
 }

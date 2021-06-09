@@ -16,5 +16,10 @@ public class MagicDmg extends DamageOutput{
   public int getTimeUseMag(){
     return this.timeUseMag;
   }
+
+  public String toString(){
+    System.out.println("You used" + skillNameMag() + "for" + theTimesUseMag + "times.");
+    return "";
+  }
  
 }

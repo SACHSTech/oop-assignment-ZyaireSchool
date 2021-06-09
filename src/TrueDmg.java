@@ -16,4 +16,9 @@ public class TrueDmg extends DamageOutput{
   public int getTimeUseTru(){
     return this.timeUseTru;
   }
+
+  public String toString(){
+    System.out.println("You used" + skillNameTru() + "for" + theTimesUseTru + "times.");
+    return "";
+  }
 }
