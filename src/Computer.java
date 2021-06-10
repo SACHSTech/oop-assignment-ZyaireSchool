@@ -13,4 +13,9 @@ public class Computer extends Items {
   public String type(){
     return type;
   }
+
+  public String toString(){
+    System.out.println("");
+    return "";
+  }
 }

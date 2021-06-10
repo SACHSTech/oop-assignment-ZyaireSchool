@@ -13,4 +13,9 @@ public class Clothing extends Items {
   public String size(){
     return size;
   }
+
+  public String toString(){
+    System.out.println("");
+    return "";
+  }
 }

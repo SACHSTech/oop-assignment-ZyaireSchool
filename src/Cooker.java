@@ -13,4 +13,9 @@ public class Cooker extends Items {
   public String category(){
     return category;
   }
+
+  public String toString(){
+    System.out.println("");
+    return "";
+  }
 }
