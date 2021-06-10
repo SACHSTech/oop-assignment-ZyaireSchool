@@ -1,16 +1,16 @@
-public class Clothing extends Items {
-  private String color;
-  private String size;
+public class Cooker extends Items {
+  private String texture;
+  private String category;
 
-  public Clothing(double price, String brand, String name, boolean warranty, String theColor, String theSize){
+  public Cooker(double price, String brand, String name, boolean warranty, String theTexture, String theCategory){
     super(price, brand, name, warranty);
-    color = theColor;
-    size = theSize;
+    texture = theTexture;
+    category = theCategory;
   } 
-  public String color(){
-    return color;
+  public String texture(){
+    return texture;
   }
-  public String size(){
-    return size;
+  public String category(){
+    return category;
   }
 }

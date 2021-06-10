@@ -1,16 +1,16 @@
 public class Computer extends Items {
-  private String color;
-  private String size;
+  private String type;
+  private String OS;
 
-  public Clothing(double price, String brand, String name, boolean warranty, String theColor, String theSize){
+  public Computer(double price, String brand, String name, boolean warranty, String theOS, String theType){
     super(price, brand, name, warranty);
-    color = theColor;
-    size = theSize;
+    OS = theOS;
+    type = theType;
   } 
-  public String color(){
-    return color;
+  public String OS(){
+    return os;
   }
-  public String size(){
-    return size;
+  public String type(){
+    return type;
   }
 }
