@@ -23,4 +23,8 @@ public class ShoppingCart{
   public void addComputer(Clothing newClo){
     clothings.add(newClo);
   }
+
+  public getClothingNum(){
+    
+  }
 }
