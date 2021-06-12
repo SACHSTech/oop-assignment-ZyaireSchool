@@ -1,9 +1,12 @@
+package Cos1co_Shopping;
+import Cos1co_Shopping.*;
+
 public class Cooker extends Items {
   private String texture;
   private String category;
 
-  public Cooker(double price, String brand, String name, boolean warranty, String theTexture, String theCategory){
-    super(price, brand, name, warranty);
+  public Cooker(double price, String brand, String name, boolean warranty, String theTexture, String theCategory, int amount){
+    super(price, brand, name, warranty, amount);
     texture = theTexture;
     category = theCategory;
   } 
@@ -15,7 +18,7 @@ public class Cooker extends Items {
   }
 
   public String toString(){
-    System.out.println("");
+    System.out.println("You added a " + texture() +  );
     return "";
   }
 }
