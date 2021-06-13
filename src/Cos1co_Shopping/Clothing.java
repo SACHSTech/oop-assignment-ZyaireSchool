@@ -5,8 +5,8 @@ public class Clothing extends Items {
   private String color;
   private String size;
 
-  public Clothing(double price, String brand, String name, boolean warranty, String theColor, String theSize, int amount){
-    super(price, brand, name, warranty, amount);
+  public Clothing(String name, String brand, double price, boolean warranty, int amount, String theColor, String theSize){
+    super(name, brand, price, warranty, amount);
     color = theColor;
     size = theSize;
   } 
@@ -18,7 +18,6 @@ public class Clothing extends Items {
   }
 
   public String toString(){
-    System.out.println("");
     return "";
   }
 }

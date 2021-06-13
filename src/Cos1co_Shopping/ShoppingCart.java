@@ -18,11 +18,11 @@ public class ShoppingCart{
     computers.add(newCom);
   }
 
-  public void addComputer(Cooker newCok){
+  public void addCooker(Cooker newCok){
     cookers.add(newCok);
   }
 
-  public void addComputer(Clothing newClo){
+  public void addClothing(Clothing newClo){
     clothings.add(newClo);
   }
 
@@ -38,23 +38,23 @@ public class ShoppingCart{
     return cookers.size();
   }
 
-  public getClothingfPrice(){
-    int fPrice = 0;
-    for(int i = 0; i < getAmtClo; i++){
+  public double getClothingfPrice(){
+    double fPrice = 0.00;
+    for(int i = 0; i < getAmtClo(); i++){
       fPrice = fPrice + clothings.get(i).getPrice();
     }
     return fPrice;
   }
-  public getComputerfPrice(){
-    int fPrice = 0;
-    for(int i = 0; i < getAmtCom; i++){
+  public double getComputerfPrice(){
+    double fPrice = 0.00;
+    for(int i = 0; i < getAmtCom(); i++){
       fPrice = fPrice + computers.get(i).getPrice();
     }
     return fPrice;
   }
-  public getCookerfPrice(){
-    int fPrice = 0;
-    for(int i = 0; i < getAmtCok; i++){
+  public double getCookerfPrice(){
+    double fPrice = 0.00;
+    for(int i = 0; i < getAmtCok(); i++){
       fPrice = fPrice + cookers.get(i).getPrice();
     }
     return fPrice;

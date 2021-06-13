@@ -13,7 +13,7 @@ public class Items{
     brand = theBrand;
     price = thePrice;
     warranty = theWarranty;
-    amount = theAmount
+    amount = theAmount;
   }
 
   public String getName(){

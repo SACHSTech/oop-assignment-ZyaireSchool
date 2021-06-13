@@ -5,8 +5,8 @@ public class Cooker extends Items {
   private String texture;
   private String category;
 
-  public Cooker(double price, String brand, String name, boolean warranty, String theTexture, String theCategory, int amount){
-    super(price, brand, name, warranty, amount);
+  public Cooker(String name, String brand, double price, boolean warranty, int amount, String theTexture, String theCategory){
+    super(name, brand, price, warranty, amount);
     texture = theTexture;
     category = theCategory;
   } 
@@ -18,7 +18,6 @@ public class Cooker extends Items {
   }
 
   public String toString(){
-    System.out.println("You added a " + texture() +  );
     return "";
   }
 }
