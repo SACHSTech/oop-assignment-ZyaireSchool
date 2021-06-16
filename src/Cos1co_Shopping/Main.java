@@ -41,7 +41,7 @@ public class Main{
           Clothing newClothing = new Clothing(clothName, clothBrand, clothPrice, true, clothAmount, clothColor, clothSize);
           System.out.println(newClothing);
           cart.addClothing(newClothing);
-          System.out.println("Each one costs $25.99, your final price (exclude tax) is: " + cart.getClothingfPrice());
+          System.out.println("Each one costs $25.99, your final price (exclude tax) is: $" + cart.getClothingfPrice());
           break;
         }
       }else if(userInput == 2){
