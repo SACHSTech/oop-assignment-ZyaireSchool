@@ -7,14 +7,14 @@ public class Computer extends Items {
 
   public Computer(String name, String brand, double price, boolean warranty, int amount, String theType, String theOS){
     super(name, brand, price, warranty, amount);
-    OS = theOS;
-    type = theType;
+    this.OS = theOS;
+    this.type = theType;
   } 
   public String OS(){
-    return OS;
+    return this.OS;
   }
   public String type(){
-    return type;
+    return this.type;
   }
 
   public String toString(){

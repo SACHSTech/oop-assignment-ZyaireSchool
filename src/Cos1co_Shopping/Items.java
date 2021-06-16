@@ -9,26 +9,26 @@ public class Items{
   private int amount;
 
   public Items(String theName, String theBrand, double thePrice, boolean theWarranty, int theAmount){
-    name = theName;
-    brand = theBrand;
-    price = thePrice;
-    warranty = theWarranty;
-    amount = theAmount;
+    this.name = theName;
+    this.brand = theBrand;
+    this.price = thePrice;
+    this.warranty = theWarranty;
+    this.amount = theAmount;
   }
 
   public String getName(){
-    return name;
+    return this.name;
   }
   public String getBrand(){
-    return brand;
+    return this.brand;
   }
   public double getPrice(){
-    return price;
+    return this.price;
   }
   public boolean getWarranty(){
-    return warranty;
+    return this.warranty;
   }
   public int getAmount(){
-    return amount;
+    return this.amount;
   }
 }

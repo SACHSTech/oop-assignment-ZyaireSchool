@@ -7,6 +7,7 @@ import java.text.NumberFormat;
 public class Main{
   public static void main(String[] args) throws IOException{
     int userInput = 0;
+    String clothName = "";
     String clothColor = "";
     int clothAmount = 0;
     String clothSize = "";
@@ -27,6 +28,8 @@ public class Main{
 
       if(userInput == 1){
         while(true){
+          System.out.println("Which kind of clothing do you want?");
+          clothName = keyboard.readLine();
           System.out.println("What color do you want?");
           clothColor = keyboard.readLine();
           System.out.println("How many do you want?");
@@ -35,10 +38,10 @@ public class Main{
           clothSize = keyboard.readLine();
           System.out.println("Which brand would you like?");
           clothBrand = keyboard.readLine();
-          Clothing newClothing = new Clothing("Clothing", clothBrand, clothPrice, true, clothAmount, clothColor, clothSize);
+          Clothing newClothing = new Clothing(clothName, clothBrand, clothPrice, true, clothAmount, clothColor, clothSize);
           System.out.println(newClothing);
           cart.addClothing(newClothing);
-          System.out.println(cart.getClothingfPrice());
+          System.out.println("Each one costs $25.99, your final price (exclude tax) is: " + cart.getClothingfPrice());
           break;
         }
       }else if(userInput == 2){

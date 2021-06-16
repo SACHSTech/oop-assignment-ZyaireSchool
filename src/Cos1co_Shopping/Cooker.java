@@ -7,14 +7,14 @@ public class Cooker extends Items {
 
   public Cooker(String name, String brand, double price, boolean warranty, int amount, String theTexture, String theCategory){
     super(name, brand, price, warranty, amount);
-    texture = theTexture;
-    category = theCategory;
+    this.texture = theTexture;
+    this.category = theCategory;
   } 
   public String texture(){
-    return texture;
+    return this.texture;
   }
   public String category(){
-    return category;
+    return this.category;
   }
 
   public String toString(){
