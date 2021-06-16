@@ -41,21 +41,21 @@ public class ShoppingCart{
   public double getClothingfPrice(){
     double fPrice = 0.00;
     for(int i = 0; i < getAmtClo(); i++){
-      fPrice = fPrice + clothings.get(i).getPrice()*clothings.get(i).getAmount();
+      fPrice = fPrice + clothings.get(i).getPrice() * clothings.get(i).getAmount();
     }
     return fPrice;
   }
   public double getComputerfPrice(){
     double fPrice = 0.00;
     for(int i = 0; i < getAmtCom(); i++){
-      fPrice = fPrice + computers.get(i).getPrice();
+      fPrice = fPrice + computers.get(i).getPrice() * computers.get(i).getAmount();
     }
     return fPrice;
   }
   public double getCookerfPrice(){
     double fPrice = 0.00;
     for(int i = 0; i < getAmtCok(); i++){
-      fPrice = fPrice + cookers.get(i).getPrice();
+      fPrice = fPrice + cookers.get(i).getPrice() * cookers.get(i).getAmount();
     }
     return fPrice;
   }
