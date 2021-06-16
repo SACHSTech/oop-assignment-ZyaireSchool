@@ -7,17 +7,17 @@ public class Clothing extends Items {
 
   public Clothing(String name, String brand, double price, boolean warranty, int amount, String theColor, String theSize){
     super(name, brand, price, warranty, amount);
-    color = theColor;
-    size = theSize;
+    this.color = theColor;
+    this.size = theSize;
   } 
   public String color(){
-    return color;
+    return this.color;
   }
   public String size(){
-    return size;
+    return this.size;
   }
 
   public String toString(){
-    return "";
+    return "add" + this.color;
   }
 }

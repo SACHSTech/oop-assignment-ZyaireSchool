@@ -41,7 +41,7 @@ public class ShoppingCart{
   public double getClothingfPrice(){
     double fPrice = 0.00;
     for(int i = 0; i < getAmtClo(); i++){
-      fPrice = fPrice + clothings.get(i).getPrice();
+      fPrice = fPrice + clothings.get(i).getPrice()*clothings.get(i).getAmount();
     }
     return fPrice;
   }
