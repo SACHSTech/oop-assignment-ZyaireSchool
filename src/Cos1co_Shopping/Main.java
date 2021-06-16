@@ -24,7 +24,14 @@ public class Main{
     String compName = "";
     double compPrice = 799.99;
     int compAmount = 0;
+
     //vars for cookers
+    String cookTexture = "";
+    String cookBrand = "";
+    String cookCategory = "";
+    String cookName = "";
+    double cookPrice = 799.99;
+    int cookAmount = 0;
 
     //initial shopping cart
     ShoppingCart cart = new ShoppingCart();
@@ -38,6 +45,7 @@ public class Main{
       System.out.println("Press 1 to get nice clothings.");
       System.out.println("Press 2 to get cool computers.");
       System.out.println("Press 3 to get some cookers.");
+      System.out.println("Press 4 to see the shopping cart.");
       userInput = Integer.parseInt(keyboard.readLine());
 
       if(userInput == 1){
@@ -61,7 +69,7 @@ public class Main{
           System.out.println(newClothing);
           cart.addClothing(newClothing);
 
-          System.out.println("Each one costs $25.99, your final price for clothings (exclude tax) is: $" + cart.getClothingfPrice());
+          System.out.println("Your final price for clothings (exclude tax) is: $" + cart.getClothingfPrice());
           break;
         }
 
@@ -82,15 +90,41 @@ public class Main{
           System.out.println("Which brand would you like?");
           compBrand = keyboard.readLine();
 
-          Computer newComputer = new Computer(compName, compBrand, compPrice, true, compAmount, compType, compOS);
+          Computer newComputer = new Computer(compName, compBrand, compPrice, false, compAmount, compType, compOS);
           System.out.println(newComputer);
           cart.addComputer(newComputer);
 
-          System.out.println("Each one costs $25.99, your final price for clothings (exclude tax) is: $" + cart.getClothingfPrice());
+          System.out.println("Your final price for computers (exclude tax) is: $" + cart.getComputerfPrice());
           break;
         }
       }else if(userInput == 3){
-        System.out.println("you pressed 3");
+        while(true){
+          System.out.println("Which OS do you prefer to use?");
+          compOS = keyboard.readLine();
+
+          System.out.println("What type of computer do you want?");
+          compType = keyboard.readLine();
+
+          System.out.println("How many do you want?");
+          compAmount = Integer.parseInt(keyboard.readLine());
+
+          System.out.println("Is there a specific name? If there is no answer, please type 'None'");
+          compName = keyboard.readLine();
+
+          System.out.println("Which brand would you like?");
+          compBrand = keyboard.readLine();
+
+          Computer newComputer = new Computer(compName, compBrand, compPrice, false, compAmount, compType, compOS);
+          System.out.println(newComputer);
+          cart.addComputer(newComputer);
+
+          System.out.println("Your final price for computers (exclude tax) is: $" + cart.getComputerfPrice());
+          break;
+        }
+
+      }else if(userInput == 4){
+        System.out.println("u pressed 4");
+        break;
       }else{
         System.out.println("invalid");
       }

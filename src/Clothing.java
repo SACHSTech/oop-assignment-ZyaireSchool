@@ -18,6 +18,6 @@ public class Clothing extends Items {
   }
 
   public String toString(){
-    return "Successfully added" + getAmount() + " " + getBrand() + " " + this.color +  " " + getName() + ", size: " + this.size + ", price: " + getPrice() + ", warranty: " + getWarranty();
+    return "Successfully added" + " " + getAmount() + " " + getBrand() + " " + this.color +  " " + getName() + ", size: " + this.size + ", price: " + getPrice() + ", warranty: " + getWarranty();
   }
 }
