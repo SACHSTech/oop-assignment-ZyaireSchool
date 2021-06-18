@@ -31,6 +31,7 @@ public class Main{
     String cookCategory = "";
     String cookName = "";
     double cookPrice = 0.00;
+    double cookTempPrice = 0.00;
     int cookAmount = 0;
 
     //initial shopping cart
@@ -139,7 +140,6 @@ public class Main{
               compPrice = 2514.00;
               break;
           }
-
           System.out.println("How many would you like to buy?");
           compAmount = Integer.parseInt(keyboard.readLine());
 
@@ -160,31 +160,66 @@ public class Main{
         }
       }else if(userInput == 3){
         while(true){
-          System.out.println("Which OS do you prefer to use?");
-          compOS = keyboard.readLine();
-
-          System.out.println("What type of computer do you want?");
-          compType = keyboard.readLine();
+          System.out.println("What texutre do you prefer?");
+          System.out.println("Press 1 - Iron.");
+          System.out.println("Press 2 - Wood.");
+          System.out.println("Press 3 - Silica.");
+          userInput = Integer.parseInt(keyboard.readLine());
+          switch(userInput){
+            case 1:
+              cookTexture = "Iron";
+              cookTempPrice = 20.00;
+              break;
+            case 2:
+              cookTexture = "Wood";
+              cookTempPrice = 15.00;
+              break;
+            case 3: 
+              cookTexture = "Silica";
+              cookTempPrice = 30.00;
+              break;
+          }
+          System.out.println("Which category of cookers do you want to buy?");
+          System.out.println("Press 1 - Pot and cooking shovel.");
+          System.out.println("Press 2 - Bowl and tabelwares.");
+          System.out.println("Press 3 - Cooking machines.");
+          userInput = Integer.parseInt(keyboard.readLine());
+          switch(userInput){
+            case 1:
+              cookCategory = "Pot and cooking shovel.";
+              cookPrice = 20.00 + cookTempPrice;
+              break;
+            case 2:
+              cookCategory = "Bowl and tabelwares.";
+              cookPrice = 30.00 + cookTempPrice;
+              break;
+            case 3: 
+              cookCategory = "Bread machine and roaster.";
+              cookPrice = 300.00 + cookTempPrice;
+              break;
+          }
+          System.out.println("Which one would you like to buy? Choose one in the category. Your Choice: " + cookCategory);
+          cookName = keyboard.readLine();
 
           System.out.println("How many do you want?");
-          compAmount = Integer.parseInt(keyboard.readLine());
+          cookAmount = Integer.parseInt(keyboard.readLine());
 
-          System.out.println("Is there a specific name? If there is no answer, please type 'None'");
-          compName = keyboard.readLine();
 
           System.out.println("Which brand would you like?");
-          compBrand = keyboard.readLine();
+          cookBrand = keyboard.readLine();
 
-          Computer newComputer = new Computer(compName, compBrand, compPrice, false, compAmount, compType, compOS);
-          System.out.println(newComputer);
-          cart.addComputer(newComputer);
+          Cooker newCooker = new Cooker(cookName, cookBrand, cookPrice, false, cookAmount, cookTexture, cookCategory);
+          System.out.println(newCooker);
+          cart.addCooker(newCooker);
+          System.out.println(" ");
 
-          System.out.println("Your final price for computers (exclude tax) is: $" + cart.getComputerfPrice());
+          System.out.println("Your final price for computers (exclude tax) is: $" + cart.getCookerfPrice());
+          System.out.println("-------------------------------------------------------------------------------");
           break;
         }
-
       }else if(userInput == 4){
-        System.out.println("u pressed 4");
+        System.out.println("Items");
+        System.out.println(cart.);
         break;
       }else{
         System.out.println("invalid");

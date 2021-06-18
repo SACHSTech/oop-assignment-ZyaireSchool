@@ -18,6 +18,6 @@ public class Cooker extends Items {
   }
 
   public String toString(){
-    return "";
+    return "Successfully added" + " " + getName() + ", category: " + this.category +  ", Amount: " + getAmount() + ", Brand: " + getBrand() + ", Texture: " + this.texture + ", price: $" + getPrice() + ", warranty: " + getWarranty();
   }
 }
