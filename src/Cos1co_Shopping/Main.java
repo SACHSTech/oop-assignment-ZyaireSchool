@@ -9,6 +9,7 @@ public class Main{
     //record the user input
     int userInput = 0;
     String userString = "";
+    int temp = 100;
 
     //vars for clothings
     int clothAmount = 0;
@@ -61,12 +62,13 @@ public class Main{
       userInput = Integer.parseInt(keyboard.readLine());
 
       if(userInput == 1){
-        while(true){
+        while(temp > 3){
           System.out.println("Which kind of clothing do you want?");
           System.out.println("Press 1 for shorts.");
           System.out.println("Press 2 for dresses.");
           System.out.println("Press 3 for shirts");
           userInput = Integer.parseInt(keyboard.readLine());
+          temp = userInput;
           switch(userInput){
             case 1:
               clothName = "Short";
@@ -82,13 +84,16 @@ public class Main{
               break;
             default:
               System.out.println("Try Again!");
-              break;
           }
+        }
+        //temp = 100;
+        while(true){
           System.out.println("What color do you want?");
           System.out.println("Press 1 - Pink.");
           System.out.println("Press 2 - Black.");
           System.out.println("Press 3 - White.");
           userInput = Integer.parseInt(keyboard.readLine());
+          temp = userInput;
           switch(userInput){
             case 1:
               clothColor = "pink";
@@ -101,9 +106,8 @@ public class Main{
               break;
             default:
               System.out.println("Try Again!");
-              break;
           }
-
+        }
           System.out.println("How many do you want?");
           clothAmount = Integer.parseInt(keyboard.readLine());
 
@@ -125,7 +129,6 @@ public class Main{
           System.out.println("Your final price for clothings (exclude tax) is: $" + cart.getClothingfPrice());
           System.out.println("-------------------------------------------------------------------------------");
           break;
-        }
 
       }else if(userInput == 2){
         while(true){
@@ -300,9 +303,9 @@ public class Main{
         fPrice = cart.getCookerfPrice() + cart.getClothingfPrice() + cart.getComputerfPrice();
         tax = fPrice * 0.13;
         priceIncludeTax = fPrice + tax;
-        System.out.println("Total: " + fPrice);
-        System.out.println("HST 13%: " + tax);
-        System.out.println("Total Price include tax: " + priceIncludeTax);
+        System.out.println("Total: " + currencyFormat.format(fPrice));
+        System.out.println("HST 13%: " + currencyFormat.format(tax));
+        System.out.println("Total Price include tax: " + currencyFormat.format(priceIncludeTax));
         System.out.println(" ");
         System.out.println("How would you like to pay?");
         System.out.println("Press 1 - Debit Card");
