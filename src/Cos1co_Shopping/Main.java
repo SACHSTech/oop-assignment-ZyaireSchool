@@ -86,8 +86,8 @@ public class Main{
               System.out.println("Try Again!");
           }
         }
-        //temp = 100;
-        while(true){
+        temp = 100;
+        while(temp > 3){
           System.out.println("What color do you want?");
           System.out.println("Press 1 - Pink.");
           System.out.println("Press 2 - Black.");
@@ -108,16 +108,86 @@ public class Main{
               System.out.println("Try Again!");
           }
         }
-          System.out.println("How many do you want?");
-          clothAmount = Integer.parseInt(keyboard.readLine());
+        System.out.println("How many do you want?");
+        clothAmount = Integer.parseInt(keyboard.readLine());
 
+        temp = 100; 
+        while(temp > 7){
           System.out.println("What size do you wear?");
-          System.out.println("We have XXXL, XXL, XL, L, M, S, XS.");
+          System.out.println("Press 1 - XXXL");
+          System.out.println("Press 2 - XXL");
+          System.out.println("Press 3 - XL");
+          System.out.println("Press 4 - L");
+          System.out.println("Press 5 - M");
+          System.out.println("Press 6 - S");
+          System.out.println("Press 7 - XS");
           clothSize = keyboard.readLine();
+          temp = userInput;
+          switch(userInput){
+            case 1:
+              clothSize = "XXXL";
+              break;
+            case 2:
+              clothSize = "XXL";
+              break;
+            case 3: 
+              clothSize = "XL";
+              break;
+            case 4:
+              clothSize = "L";
+              break;
+            case 5:
+              clothSize = "M";
+              break;
+            case 6:
+              clothSize = "S";
+              break;
+            case 7:
+              clothSize = "XS";
+              break;
+            default:
+              System.out.println("Try Again!");
+          }
+        }
 
+        temp = 100; 
+        while(temp > 7){
           System.out.println("Which brand would you like?");
+          System.out.println("Press 1 - Adidas");
+          System.out.println("Press 2 - Nike");
+          System.out.println("Press 3 - Calvin Klein");
+          System.out.println("Press 4 - Greg Norman");
+          System.out.println("Press 5 - Orelia");
+          System.out.println("Press 6 - Puma");
+          System.out.println("Press 7 - Raid");
           clothBrand = keyboard.readLine();
-
+          temp = userInput;
+          switch(userInput){
+            case 1:
+              clothSize = "Adidas";
+              break;
+            case 2:
+              clothSize = "Nike";
+              break;
+            case 3: 
+              clothSize = "Calvin Klein";
+              break;
+            case 4:
+              clothSize = "Greg Norman";
+              break;
+            case 5:
+              clothSize = "Orelia";
+              break;
+            case 6:
+              clothSize = "Puma";
+              break;
+            case 7:
+              clothSize = "Raid";
+              break;
+            default:
+              System.out.println("Try Again!");
+          }
+        }
           Clothing newClothing = new Clothing(clothName, clothBrand, clothPrice, true, clothAmount, clothColor, clothSize);
           System.out.println(newClothing);
           cart.addClothing(newClothing);
@@ -131,12 +201,14 @@ public class Main{
           break;
 
       }else if(userInput == 2){
-        while(true){
+        temp = 100;
+        while(temp > 3){
           System.out.println("Which OS do you prefer to use?");
           System.out.println("Press 1 - Linux.");
           System.out.println("Press 2 - Windows.");
           System.out.println("Press 3 - Mac.");
           userInput = Integer.parseInt(keyboard.readLine());
+          temp = userInput;
           switch(userInput){
             case 1:
               compOS = "Linux";
@@ -151,7 +223,7 @@ public class Main{
               System.out.println("Try Again!");
               break;
           }
-
+        }
           System.out.println("What type of computer do you want?");
           System.out.println("Press 1 - Tablet.");
           System.out.println("Press 2 - PC");
@@ -218,7 +290,6 @@ public class Main{
           System.out.println("Your final price for computers (exclude tax) is: $" + cart.getComputerfPrice());
           System.out.println("-------------------------------------------------------------------------------");
           break;
-        }
       }else if(userInput == 3){
         while(true){
           System.out.println("What texutre do you prefer?");
