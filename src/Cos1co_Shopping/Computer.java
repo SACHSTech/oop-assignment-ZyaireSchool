@@ -18,6 +18,6 @@ public class Computer extends Items {
   }
 
   public String toString(){
-    return "Successfully added" + " " + getAmount() + this.type + " " + getBrand() + " "  + ", Name: " + getName() + ", Operating System: " + this.OS + ", price: " + getPrice() + ", warranty: " + getWarranty();
+    return "Successfully added" + " " + getName() + ", Amount: " + getAmount() + ", Type: " + this.type +  ", Brand: " + getBrand() + ", Operating System: " + this.OS + ", price: $" + getPrice() + ", warranty: " + getWarranty();
   }
 }

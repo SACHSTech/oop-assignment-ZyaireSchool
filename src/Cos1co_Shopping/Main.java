@@ -11,7 +11,7 @@ public class Main{
 
     //vars for clothings
     int clothAmount = 0;
-    double clothPrice = 25.99;
+    double clothPrice = 0.00;
     String clothName = "";
     String clothColor = "";
     String clothSize = "";
@@ -22,7 +22,7 @@ public class Main{
     String compBrand = "";
     String compType = "";
     String compName = "";
-    double compPrice = 799.99;
+    double compPrice = 0.00;
     int compAmount = 0;
 
     //vars for cookers
@@ -30,7 +30,7 @@ public class Main{
     String cookBrand = "";
     String cookCategory = "";
     String cookName = "";
-    double cookPrice = 799.99;
+    double cookPrice = 0.00;
     int cookAmount = 0;
 
     //initial shopping cart
@@ -51,15 +51,46 @@ public class Main{
       if(userInput == 1){
         while(true){
           System.out.println("Which kind of clothing do you want?");
-          clothName = keyboard.readLine();
-
+          System.out.println("Press 1 for shorts.");
+          System.out.println("Press 2 for dresses.");
+          System.out.println("Press 3 for shirts");
+          userInput = Integer.parseInt(keyboard.readLine());
+          switch(userInput){
+            case 1:
+              clothName = "Short";
+              clothPrice = 19.00;
+              break;
+            case 2:
+              clothName = "Dress";
+              clothPrice = 25.00;
+              break;
+            case 3: 
+              clothName = "Shirt";
+              clothPrice = 9.99;
+              break;
+          }
           System.out.println("What color do you want?");
-          clothColor = keyboard.readLine();
+          System.out.println("Press 1 - Pink.");
+          System.out.println("Press 2 - Black.");
+          System.out.println("Press 3 - White.");
+          userInput = Integer.parseInt(keyboard.readLine());
+          switch(userInput){
+            case 1:
+              clothColor = "pink";
+              break;
+            case 2:
+              clothColor = "black";
+              break;
+            case 3: 
+              clothColor = "white";
+              break;
+          }
 
           System.out.println("How many do you want?");
           clothAmount = Integer.parseInt(keyboard.readLine());
 
           System.out.println("What size do you wear?");
+          System.out.println("We have XXXL, XXL, XL, L, M, S, XS.");
           clothSize = keyboard.readLine();
 
           System.out.println("Which brand would you like?");
@@ -68,20 +99,48 @@ public class Main{
           Clothing newClothing = new Clothing(clothName, clothBrand, clothPrice, true, clothAmount, clothColor, clothSize);
           System.out.println(newClothing);
           cart.addClothing(newClothing);
+          System.out.println(" ");
 
           System.out.println("Your final price for clothings (exclude tax) is: $" + cart.getClothingfPrice());
+          System.out.println("-------------------------------------------------------------------------------");
           break;
         }
 
       }else if(userInput == 2){
         while(true){
           System.out.println("Which OS do you prefer to use?");
-          compOS = keyboard.readLine();
+          System.out.println("Press 1 - Linux.");
+          System.out.println("Press 2 - Windows.");
+          System.out.println("Press 3 - Mac.");
+          userInput = Integer.parseInt(keyboard.readLine());
+          switch(userInput){
+            case 1:
+              compOS = "Linux";
+              break;
+            case 2:
+              compOS = "Windows";
+              break;
+            case 3: 
+              compOS = "Mac";
+              break;
+          }
 
           System.out.println("What type of computer do you want?");
-          compType = keyboard.readLine();
+          System.out.println("Press 1 - Tablet.");
+          System.out.println("Press 2 - PC");
+          userInput = Integer.parseInt(keyboard.readLine());
+          switch(userInput){
+            case 1:
+              compType = "Tablet";
+              compPrice = 799.99;
+              break;
+            case 2:
+              compType = "PC";
+              compPrice = 2514.00;
+              break;
+          }
 
-          System.out.println("How many do you want?");
+          System.out.println("How many would you like to buy?");
           compAmount = Integer.parseInt(keyboard.readLine());
 
           System.out.println("Is there a specific name? If there is no answer, please type 'None'");
@@ -93,8 +152,10 @@ public class Main{
           Computer newComputer = new Computer(compName, compBrand, compPrice, false, compAmount, compType, compOS);
           System.out.println(newComputer);
           cart.addComputer(newComputer);
+          System.out.println(" ");
 
           System.out.println("Your final price for computers (exclude tax) is: $" + cart.getComputerfPrice());
+          System.out.println("-------------------------------------------------------------------------------");
           break;
         }
       }else if(userInput == 3){
