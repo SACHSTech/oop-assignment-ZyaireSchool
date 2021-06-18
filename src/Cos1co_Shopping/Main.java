@@ -39,6 +39,13 @@ public class Main{
 
     //making arraylist for the final check out
     ArrayList<String> itemName = new ArrayList<String>();
+    ArrayList<Integer> itemAmount = new ArrayList<Integer>();
+    ArrayList<Double> itemPrice = new ArrayList<Double>();
+
+    //Final price
+    double fPrice = 0.00;
+    double tax = 0.00;
+    double priceIncludeTax = 0.00;
 
     System.out.println("Welcome to Cos1co Shopping System! We provide Clothings, Computers and Cookers. Enjoy your purchase!");
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
@@ -72,6 +79,9 @@ public class Main{
               clothName = "Shirt";
               clothPrice = 9.99;
               break;
+            default:
+              System.out.println("Try Again!");
+              break;
           }
           System.out.println("What color do you want?");
           System.out.println("Press 1 - Pink.");
@@ -87,6 +97,9 @@ public class Main{
               break;
             case 3: 
               clothColor = "white";
+              break;
+            default:
+              System.out.println("Try Again!");
               break;
           }
 
@@ -104,6 +117,8 @@ public class Main{
           System.out.println(newClothing);
           cart.addClothing(newClothing);
           itemName.add(newClothing.getName());
+          itemAmount.add(newClothing.getAmount());
+          itemPrice.add(newClothing.getPrice());
           System.out.println(" ");
 
           System.out.println("Your final price for clothings (exclude tax) is: $" + cart.getClothingfPrice());
@@ -128,6 +143,9 @@ public class Main{
             case 3: 
               compOS = "Mac";
               break;
+            default:
+              System.out.println("Try Again!");
+              break;
           }
 
           System.out.println("What type of computer do you want?");
@@ -143,6 +161,9 @@ public class Main{
               compType = "PC";
               compPrice = 2514.00;
               break;
+            default:
+              System.out.println("Try Again!");
+              break;
           }
           System.out.println("How many would you like to buy?");
           compAmount = Integer.parseInt(keyboard.readLine());
@@ -156,6 +177,9 @@ public class Main{
           Computer newComputer = new Computer(compName, compBrand, compPrice, false, compAmount, compType, compOS);
           System.out.println(newComputer);
           cart.addComputer(newComputer);
+          itemName.add(compType);
+          itemAmount.add(newComputer.getAmount());
+          itemPrice.add(newComputer.getPrice());
           System.out.println(" ");
 
           System.out.println("Your final price for computers (exclude tax) is: $" + cart.getComputerfPrice());
@@ -182,6 +206,9 @@ public class Main{
               cookTexture = "Silica";
               cookTempPrice = 30.00;
               break;
+            default:
+              System.out.println("Try Again!");
+              break;  
           }
           System.out.println("Which category of cookers do you want to buy?");
           System.out.println("Press 1 - Pot and cooking shovel.");
@@ -201,6 +228,9 @@ public class Main{
               cookCategory = "Bread machine and roaster.";
               cookPrice = 300.00 + cookTempPrice;
               break;
+            default:
+              System.out.println("Try Again!");
+              break;  
           }
           System.out.println("Which one would you like to buy? Choose one in the category. Your Choice: " + cookCategory);
           cookName = keyboard.readLine();
@@ -208,13 +238,15 @@ public class Main{
           System.out.println("How many do you want?");
           cookAmount = Integer.parseInt(keyboard.readLine());
 
-
           System.out.println("Which brand would you like?");
           cookBrand = keyboard.readLine();
 
           Cooker newCooker = new Cooker(cookName, cookBrand, cookPrice, false, cookAmount, cookTexture, cookCategory);
           System.out.println(newCooker);
           cart.addCooker(newCooker);
+          itemName.add(newCooker.getName());
+          itemAmount.add(newCooker.getAmount());
+          itemPrice.add(newCooker.getPrice());
           System.out.println(" ");
 
           System.out.println("Your final price for computers (exclude tax) is: $" + cart.getCookerfPrice());
@@ -222,12 +254,26 @@ public class Main{
           break;
         }
       }else if(userInput == 4){
-        System.out.println("Items");
+        System.out.println("---------------------------------------------------------");
+        System.out.println("                    Items detail below                   ");
+        System.out.println("---------------------------------------------------------");
         for (int i = 0; i < itemName.size(); i++) {
-          String displayItem = itemName.get(i);
-          System.out.println(displayItem );
+          String name;
+          int amount;
+          double price;
+          name = itemName.get(i);
+          amount = itemAmount.get(i);
+          price = itemPrice.get(i);
+          System.out.println(name + " x " + amount + " " + price);
         }
-        break;
+        System.out.println("------------------------------------------");
+        fPrice = cart.getCookerfPrice() + cart.getClothingfPrice() + cart.getComputerfPrice();
+        tax = fPrice * 0.13;
+        priceIncludeTax = fPrice + tax;
+        System.out.println("Total: " + fPrice);
+        System.out.println("HST 13%: " + tax);
+        System.out.println("Total Price include tax: " + priceIncludeTax);
+        System.out.println(" ");
       }else{
         System.out.println("invalid");
       }
