@@ -172,7 +172,36 @@ public class Main{
           compName = keyboard.readLine();
 
           System.out.println("Which brand would you like?");
-          compBrand = keyboard.readLine();
+          System.out.println("Press 1 - ASUS.");
+          System.out.println("Press 2 - MSI");
+          System.out.println("Press 3 - DEEL");
+          System.out.println("Press 4 - Lenovo");
+          System.out.println("Press 5 - Acer");
+          System.out.println("Press 6 - Microsoft");
+          userInput = Integer.parseInt(keyboard.readLine());
+          switch(userInput){
+            case 1:
+              compBrand = "ASUS";
+              break;
+            case 2:
+              compBrand = "MSI";
+              break;
+            case 3:
+              compBrand = "DEEL";
+              break;
+            case 4:
+              compBrand = "Lenovo";
+              break;
+            case 5:
+              compBrand = "Acer";
+              break;
+            case 6:
+              compBrand = "Microsoft";
+              break;
+            default:
+              System.out.println("Try Again!");
+              break;
+          }
 
           Computer newComputer = new Computer(compName, compBrand, compPrice, false, compAmount, compType, compOS);
           System.out.println(newComputer);
@@ -274,6 +303,23 @@ public class Main{
         System.out.println("HST 13%: " + tax);
         System.out.println("Total Price include tax: " + priceIncludeTax);
         System.out.println(" ");
+        System.out.println("How would you like to pay?");
+        System.out.println("Press 1 - Debit Card");
+        System.out.println("Press 2 - Credit Card");
+        userInput = Integer.parseInt(keyboard.readLine());
+          switch(userInput){
+            case 1:
+              System.out.println("");
+              cookPrice = 20.00 + cookTempPrice;
+              break;
+            case 2:
+              cookCategory = "Bowl and tabelwares.";
+              cookPrice = 30.00 + cookTempPrice;
+              break;
+            default:
+              System.out.println("Try Again!");
+              break;  
+          }
       }else{
         System.out.println("invalid");
       }
