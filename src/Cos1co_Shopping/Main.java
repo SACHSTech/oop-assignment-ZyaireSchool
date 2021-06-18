@@ -8,6 +8,7 @@ public class Main{
   public static void main(String[] args) throws IOException{
     //record the user input
     int userInput = 0;
+    String userString = "";
 
     //vars for clothings
     int clothAmount = 0;
@@ -309,12 +310,14 @@ public class Main{
         userInput = Integer.parseInt(keyboard.readLine());
           switch(userInput){
             case 1:
-              System.out.println("");
-              cookPrice = 20.00 + cookTempPrice;
+              System.out.println("Please enter your PIN");
+              userString = keyboard.readLine();
+              System.out.println("Approved, Thank you for your purchase!");
               break;
             case 2:
-              cookCategory = "Bowl and tabelwares.";
-              cookPrice = 30.00 + cookTempPrice;
+              System.out.println("Please sign your name");
+              userString = keyboard.readLine();
+              System.out.println("Approved, Thank you for your purchase!");
               break;
             default:
               System.out.println("Try Again!");
