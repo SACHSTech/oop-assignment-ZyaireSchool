@@ -37,6 +37,9 @@ public class Main{
     //initial shopping cart
     ShoppingCart cart = new ShoppingCart();
 
+    //making arraylist for the final check out
+    ArrayList<String> itemName = new ArrayList<String>();
+
     System.out.println("Welcome to Cos1co Shopping System! We provide Clothings, Computers and Cookers. Enjoy your purchase!");
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
     NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
@@ -100,6 +103,7 @@ public class Main{
           Clothing newClothing = new Clothing(clothName, clothBrand, clothPrice, true, clothAmount, clothColor, clothSize);
           System.out.println(newClothing);
           cart.addClothing(newClothing);
+          itemName.add(newClothing.getName());
           System.out.println(" ");
 
           System.out.println("Your final price for clothings (exclude tax) is: $" + cart.getClothingfPrice());
@@ -219,7 +223,10 @@ public class Main{
         }
       }else if(userInput == 4){
         System.out.println("Items");
-        System.out.println(cart.);
+        for (int i = 0; i < itemName.size(); i++) {
+          String displayItem = itemName.get(i);
+          System.out.println(displayItem );
+        }
         break;
       }else{
         System.out.println("invalid");
