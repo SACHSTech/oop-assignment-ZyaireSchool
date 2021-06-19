@@ -4,14 +4,22 @@ import java.io.*;
 import java.util.ArrayList;
 import java.text.NumberFormat;
 
+/**
+* The program is for user to purchase items
+* The user could choose amount, types, and some specific costomizations for the items. 
+* User could access the shopping cart to check the final price.
+* Users have to choose payment methods. (Debit Card or Credit Card)
+* @authors: Zyaire Qu
+*/
+
 public class Main{
   public static void main(String[] args) throws IOException{
-    //record the user input
+    // record the user input
     int userInput = 0;
     String userString = "";
     int temp = 100;
 
-    //vars for clothings
+    // vars for clothings
     int clothAmount = 0;
     double clothPrice = 0.00;
     String clothName = "";
@@ -19,7 +27,7 @@ public class Main{
     String clothSize = "";
     String clothBrand = "";
 
-    //vars for computers
+    // vars for computers
     String compOS = "";
     String compBrand = "";
     String compType = "";
@@ -27,7 +35,7 @@ public class Main{
     double compPrice = 0.00;
     int compAmount = 0;
 
-    //vars for cookers
+    // vars for cookers
     String cookTexture = "";
     String cookBrand = "";
     String cookCategory = "";
@@ -36,23 +44,27 @@ public class Main{
     double cookTempPrice = 0.00;
     int cookAmount = 0;
 
-    //initial shopping cart
+    // initial shopping cart
     ShoppingCart cart = new ShoppingCart();
 
-    //making arraylist for the final check out
+    // making arraylist for the final check out
     ArrayList<String> itemName = new ArrayList<String>();
     ArrayList<Integer> itemAmount = new ArrayList<Integer>();
     ArrayList<Double> itemPrice = new ArrayList<Double>();
     ArrayList<String> itemFeature = new ArrayList<String>();
-    //Final price
+
+    // Final price
     double fPrice = 0.00;
     double tax = 0.00;
     double priceIncludeTax = 0.00;
 
+    // Welcome the costomers
     System.out.println("Welcome to Cos1co Shopping System! We provide Clothings, Computers and Cookers. Enjoy your purchase!");
+    // Some getters to get the user input and the currency format thing
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
     NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
 
+    // Let the user choose which section they want to go to. 
     while(true){
       System.out.println("What would you like to buy?");
       System.out.println("Press 1 to get nice clothings.");
@@ -61,7 +73,10 @@ public class Main{
       System.out.println("Press 4 to see the shopping cart.");
       userInput = Integer.parseInt(keyboard.readLine());
 
+      // Clothing Section
       if(userInput == 1){
+        // set the loop so the user could re-enter the key
+        // Asking for types
         temp = 100;
         while(temp > 3){
           System.out.println("Which kind of clothing do you want?");
@@ -87,6 +102,8 @@ public class Main{
               System.out.println("Try Again!");
           }
         }
+        // set the loop so the user could re-enter the key
+        // Asking for colors
         temp = 100;
         while(temp > 3){
           System.out.println("What color do you want?");
@@ -112,6 +129,8 @@ public class Main{
         System.out.println("How many do you want?");
         clothAmount = Integer.parseInt(keyboard.readLine());
 
+        // set the loop so the user could re-enter the key
+        // Asking for sizes
         temp = 100; 
         while(temp > 7){
           System.out.println("What size do you wear?");
@@ -151,6 +170,8 @@ public class Main{
           }
         }
 
+        // set the loop so the user could re-enter the key
+        // Asking for brands
         temp = 100; 
         while(temp > 7){
           System.out.println("Which brand would you like?");
@@ -189,8 +210,11 @@ public class Main{
               System.out.println("Try Again!");
           }
         }
+          // Call Clothing.java
           Clothing newClothing = new Clothing(clothName, clothBrand, clothPrice, true, clothAmount, clothColor, clothSize);
+          // Print out the details
           System.out.println(newClothing);
+          // Adding items into the list and its following features
           cart.addClothing(newClothing);
           itemName.add(newClothing.getName());
           itemAmount.add(newClothing.getAmount());
@@ -198,9 +222,12 @@ public class Main{
           itemFeature.add(clothColor);
           System.out.println(" ");
 
+          // Print the final price for clothing section
           System.out.println("Your final price for clothings (exclude tax) is: $" + cart.getClothingfPrice());
           System.out.println("-------------------------------------------------------------------------------");
       }else if(userInput == 2){
+        // set the loop so the user could re-enter the key
+        // Asking for OS
         temp = 100;
         while(temp > 3){
           System.out.println("Which OS do you prefer to use?");
@@ -223,7 +250,9 @@ public class Main{
               System.out.println("Try Again!");
           }
         }
-          temp = 100;
+        // set the loop so the user could re-enter the key
+        // Asking for types
+        temp = 100;
         while(temp > 2){
           System.out.println("What type of computer do you want?");
           System.out.println("Press 1 - Tablet.");
@@ -243,12 +272,16 @@ public class Main{
               System.out.println("Try Again!");
           }
         }
+          // Ask for the amount
           System.out.println("How many would you like to buy?");
           compAmount = Integer.parseInt(keyboard.readLine());
 
+          // Asking for name
           System.out.println("Is there a specific name? If there is no answer, please type 'None'");
           compName = keyboard.readLine();
-        
+
+        // set the loop so the user could re-enter the key
+        // Asking for brands
         temp = 100;
         while(temp > 6){
           System.out.println("Which brand would you like?");
@@ -283,9 +316,11 @@ public class Main{
               System.out.println("Try Again!");
           }
         }
-
+          // Call Computer.java
           Computer newComputer = new Computer(compName, compBrand, compPrice, false, compAmount, compType, compOS);
+          // Printing the following details
           System.out.println(newComputer);
+          // Adding items into the list and its following features
           cart.addComputer(newComputer);
           itemName.add(compType);
           itemAmount.add(newComputer.getAmount());
@@ -293,9 +328,12 @@ public class Main{
           itemFeature.add(compOS);
           System.out.println(" ");
 
+          // Printing the final price for computer section
           System.out.println("Your final price for computers (exclude tax) is: $" + cart.getComputerfPrice());
           System.out.println("-------------------------------------------------------------------------------");
       }else if(userInput == 3){
+        // set the loop so the user could re-enter the key
+        // Asking for texture
         temp = 100;
         while(temp > 3){
           System.out.println("What texutre do you prefer?");
@@ -321,7 +359,8 @@ public class Main{
               System.out.println("Try Again!");
           }
         }
-
+        // set the loop so the user could re-enter the key
+        // Asking for categories
         temp = 100;
         while(temp > 3){
           System.out.println("Which category of cookers do you want to buy?");
@@ -347,12 +386,15 @@ public class Main{
               System.out.println("Try Again!");
           }
         }
+          // Asking for the Name
           System.out.println("Which one would you like to buy? Choose one in the category. Your Choice: " + cookCategory);
           cookName = keyboard.readLine();
 
           System.out.println("How many do you want?");
           cookAmount = Integer.parseInt(keyboard.readLine());
-          
+        
+        // set the loop so the user could re-enter the key
+        // Asking for brands
         temp = 100;
         while(temp > 6){  
           System.out.println("Which brand would you like?");
@@ -387,21 +429,25 @@ public class Main{
               System.out.println("Try Again!");
           }
         }
+          // Calling Cooker.java
           Cooker newCooker = new Cooker(cookName, cookBrand, cookPrice, false, cookAmount, cookTexture, cookCategory);
+          // print out the details
           System.out.println(newCooker);
+          // Adding items into the list and its following features
           cart.addCooker(newCooker);
           itemName.add(newCooker.getName());
           itemAmount.add(newCooker.getAmount());
           itemPrice.add(newCooker.getPrice());
           itemFeature.add(cookTexture);
           System.out.println(" ");
-
+          // Print the final price for cooker section
           System.out.println("Your final price for computers (exclude tax) is: $" + cart.getCookerfPrice());
           System.out.println("-------------------------------------------------------------------------------");
       }else if(userInput == 4){
         System.out.println("---------------------------------------------------------");
         System.out.println("                    Items detail below                   ");
         System.out.println("---------------------------------------------------------");
+        // Read the array lists for its detail
         for (int i = 0; i < itemName.size(); i++) {
           String name;
           int amount;
@@ -411,9 +457,12 @@ public class Main{
           amount = itemAmount.get(i);
           price = itemPrice.get(i);
           feature = itemFeature.get(i);
-          System.out.println(feature + " " + name + " x " + amount + " $" + currencyFormat.format(Price)) + "/item");
+          System.out.println(feature + " " + name + " x " + amount + " $" + currencyFormat.format(price) + "/item");
         }
+
+        // Here to get the price
         System.out.println("-----------------------");
+        // calling cart to get the price! in ShoppingCart.java
         fPrice = cart.getCookerfPrice() + cart.getClothingfPrice() + cart.getComputerfPrice();
         tax = fPrice * 0.13;
         priceIncludeTax = fPrice + tax;
@@ -421,6 +470,9 @@ public class Main{
         System.out.println("HST 13%: " + currencyFormat.format(tax));
         System.out.println("Total Price include tax: " + currencyFormat.format(priceIncludeTax));
         System.out.println(" ");
+      // Choose your payment, set the loop for re-enter
+      temp = 100;
+      while(temp > 2){
         System.out.println("How would you like to pay?");
         System.out.println("Press 1 - Debit Card");
         System.out.println("Press 2 - Credit Card");
@@ -437,9 +489,9 @@ public class Main{
               System.out.println("Approved, Thank you for your purchase!");
               break;
             default:
-              System.out.println("Try Again!");
-              break;  
+              System.out.println("Try Again!");  
           }
+      }
           break;
       }else{
         System.out.println("invalid");

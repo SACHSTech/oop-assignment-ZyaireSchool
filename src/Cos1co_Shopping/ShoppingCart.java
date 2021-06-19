@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class ShoppingCart{
+  // Instance variables
+  // Creating array list for the future items
   private ArrayList<Computer> computers;
   private ArrayList<Cooker> cookers;
   private ArrayList<Clothing> clothings;
@@ -21,19 +23,32 @@ public class ShoppingCart{
   public void addCooker(Cooker newCok){
     cookers.add(newCok);
   }
-
+  
+  //
   public void addClothing(Clothing newClo){
     clothings.add(newClo);
   }
 
+  /**
+  * Getter method for computers amount
+  * @return the amount of the computers
+  */
   public int getAmtCom(){
     return computers.size();
   }
 
+  /**
+  * Getter method for clothings amount
+  * @return the amount of the clothings
+  */
   public int getAmtClo(){
     return clothings.size();
   }
 
+  /**
+  * Getter method for cookers amount
+  * @return the amount of the cookers
+  */
   public int getAmtCok(){
     return cookers.size();
   }
