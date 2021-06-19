@@ -121,7 +121,7 @@ public class Main{
           System.out.println("Press 5 - M");
           System.out.println("Press 6 - S");
           System.out.println("Press 7 - XS");
-          clothSize = keyboard.readLine();
+          userInput = Integer.parseInt(keyboard.readLine());
           temp = userInput;
           switch(userInput){
             case 1:
@@ -160,7 +160,7 @@ public class Main{
           System.out.println("Press 5 - Orelia");
           System.out.println("Press 6 - Puma");
           System.out.println("Press 7 - Raid");
-          clothBrand = keyboard.readLine();
+          userInput = Integer.parseInt(keyboard.readLine());
           temp = userInput;
           switch(userInput){
             case 1:
@@ -221,9 +221,10 @@ public class Main{
               break;
             default:
               System.out.println("Try Again!");
-              break;
           }
         }
+          temp = 100;
+        while(temp > 2){
           System.out.println("What type of computer do you want?");
           System.out.println("Press 1 - Tablet.");
           System.out.println("Press 2 - PC");
@@ -239,14 +240,16 @@ public class Main{
               break;
             default:
               System.out.println("Try Again!");
-              break;
           }
+        }
           System.out.println("How many would you like to buy?");
           compAmount = Integer.parseInt(keyboard.readLine());
 
           System.out.println("Is there a specific name? If there is no answer, please type 'None'");
           compName = keyboard.readLine();
-
+        
+        temp = 100;
+        while(temp > 6){
           System.out.println("Which brand would you like?");
           System.out.println("Press 1 - ASUS.");
           System.out.println("Press 2 - MSI");
@@ -276,8 +279,8 @@ public class Main{
               break;
             default:
               System.out.println("Try Again!");
-              break;
           }
+        }
 
           Computer newComputer = new Computer(compName, compBrand, compPrice, false, compAmount, compType, compOS);
           System.out.println(newComputer);
@@ -291,7 +294,8 @@ public class Main{
           System.out.println("-------------------------------------------------------------------------------");
           break;
       }else if(userInput == 3){
-        while(true){
+        temp = 100;
+        while(temp > 3){
           System.out.println("What texutre do you prefer?");
           System.out.println("Press 1 - Iron.");
           System.out.println("Press 2 - Wood.");
@@ -312,8 +316,11 @@ public class Main{
               break;
             default:
               System.out.println("Try Again!");
-              break;  
           }
+        }
+
+        temp = 100;
+        while(temp > 3){
           System.out.println("Which category of cookers do you want to buy?");
           System.out.println("Press 1 - Pot and cooking shovel.");
           System.out.println("Press 2 - Bowl and tabelwares.");
@@ -334,17 +341,47 @@ public class Main{
               break;
             default:
               System.out.println("Try Again!");
-              break;  
           }
+        }
           System.out.println("Which one would you like to buy? Choose one in the category. Your Choice: " + cookCategory);
           cookName = keyboard.readLine();
 
           System.out.println("How many do you want?");
           cookAmount = Integer.parseInt(keyboard.readLine());
-
+          
+        temp = 100;
+        while(temp > 6){  
           System.out.println("Which brand would you like?");
-          cookBrand = keyboard.readLine();
-
+          System.out.println("Press 1 - Y YHY.");
+          System.out.println("Press 2 - DOWAN");
+          System.out.println("Press 3 - Creative Hobbies");
+          System.out.println("Press 4 - Media");
+          System.out.println("Press 5 - Tiger");
+          System.out.println("Press 6 - Just Solutions!");
+          userInput = Integer.parseInt(keyboard.readLine());
+          switch(userInput){
+            case 1:
+              cookBrand = "Y YHY";
+              break;
+            case 2:
+              cookBrand = "DOWAN";
+              break;
+            case 3:
+              cookBrand = "Creative Hobbies";
+              break;
+            case 4:
+              cookBrand = "Media";
+              break;
+            case 5:
+              cookBrand = "Tiger";
+              break;
+            case 6:
+              cookBrand = "Just Solutions!";
+              break;
+            default:
+              System.out.println("Try Again!");
+          }
+        }
           Cooker newCooker = new Cooker(cookName, cookBrand, cookPrice, false, cookAmount, cookTexture, cookCategory);
           System.out.println(newCooker);
           cart.addCooker(newCooker);
@@ -356,7 +393,6 @@ public class Main{
           System.out.println("Your final price for computers (exclude tax) is: $" + cart.getCookerfPrice());
           System.out.println("-------------------------------------------------------------------------------");
           break;
-        }
       }else if(userInput == 4){
         System.out.println("---------------------------------------------------------");
         System.out.println("                    Items detail below                   ");
