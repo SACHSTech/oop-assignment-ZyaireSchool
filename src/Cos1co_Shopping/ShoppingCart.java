@@ -10,21 +10,24 @@ public class ShoppingCart{
   private ArrayList<Cooker> cookers;
   private ArrayList<Clothing> clothings;
 
+  // create a shopping cart include three different "hases"
   public ShoppingCart(){
     computers = new ArrayList<Computer>();
     cookers = new ArrayList<Cooker>();
     clothings = new ArrayList<Clothing>();
   }
 
+  // add the new computers
   public void addComputer(Computer newCom){
     computers.add(newCom);
   }
 
+  // add the new computers
   public void addCooker(Cooker newCok){
     cookers.add(newCok);
   }
   
-  //
+  // add the new computers
   public void addClothing(Clothing newClo){
     clothings.add(newClo);
   }
