@@ -43,7 +43,7 @@ public class Main{
     ArrayList<String> itemName = new ArrayList<String>();
     ArrayList<Integer> itemAmount = new ArrayList<Integer>();
     ArrayList<Double> itemPrice = new ArrayList<Double>();
-
+    ArrayList<String> itemFeature = new ArrayList<String>();
     //Final price
     double fPrice = 0.00;
     double tax = 0.00;
@@ -62,6 +62,7 @@ public class Main{
       userInput = Integer.parseInt(keyboard.readLine());
 
       if(userInput == 1){
+        temp = 100;
         while(temp > 3){
           System.out.println("Which kind of clothing do you want?");
           System.out.println("Press 1 for shorts.");
@@ -164,25 +165,25 @@ public class Main{
           temp = userInput;
           switch(userInput){
             case 1:
-              clothSize = "Adidas";
+              clothBrand = "Adidas";
               break;
             case 2:
-              clothSize = "Nike";
+              clothBrand = "Nike";
               break;
             case 3: 
-              clothSize = "Calvin Klein";
+              clothBrand = "Calvin Klein";
               break;
             case 4:
-              clothSize = "Greg Norman";
+              clothBrand = "Greg Norman";
               break;
             case 5:
-              clothSize = "Orelia";
+              clothBrand = "Orelia";
               break;
             case 6:
-              clothSize = "Puma";
+              clothBrand = "Puma";
               break;
             case 7:
-              clothSize = "Raid";
+              clothBrand = "Raid";
               break;
             default:
               System.out.println("Try Again!");
@@ -194,12 +195,11 @@ public class Main{
           itemName.add(newClothing.getName());
           itemAmount.add(newClothing.getAmount());
           itemPrice.add(newClothing.getPrice());
+          itemFeature.add(clothColor);
           System.out.println(" ");
 
           System.out.println("Your final price for clothings (exclude tax) is: $" + cart.getClothingfPrice());
           System.out.println("-------------------------------------------------------------------------------");
-          break;
-
       }else if(userInput == 2){
         temp = 100;
         while(temp > 3){
@@ -229,6 +229,7 @@ public class Main{
           System.out.println("Press 1 - Tablet.");
           System.out.println("Press 2 - PC");
           userInput = Integer.parseInt(keyboard.readLine());
+          temp = userInput;
           switch(userInput){
             case 1:
               compType = "Tablet";
@@ -258,6 +259,7 @@ public class Main{
           System.out.println("Press 5 - Acer");
           System.out.println("Press 6 - Microsoft");
           userInput = Integer.parseInt(keyboard.readLine());
+          temp = userInput;
           switch(userInput){
             case 1:
               compBrand = "ASUS";
@@ -288,11 +290,11 @@ public class Main{
           itemName.add(compType);
           itemAmount.add(newComputer.getAmount());
           itemPrice.add(newComputer.getPrice());
+          itemFeature.add(compOS);
           System.out.println(" ");
 
           System.out.println("Your final price for computers (exclude tax) is: $" + cart.getComputerfPrice());
           System.out.println("-------------------------------------------------------------------------------");
-          break;
       }else if(userInput == 3){
         temp = 100;
         while(temp > 3){
@@ -301,6 +303,7 @@ public class Main{
           System.out.println("Press 2 - Wood.");
           System.out.println("Press 3 - Silica.");
           userInput = Integer.parseInt(keyboard.readLine());
+          temp = userInput;
           switch(userInput){
             case 1:
               cookTexture = "Iron";
@@ -326,6 +329,7 @@ public class Main{
           System.out.println("Press 2 - Bowl and tabelwares.");
           System.out.println("Press 3 - Cooking machines.");
           userInput = Integer.parseInt(keyboard.readLine());
+          temp = userInput;
           switch(userInput){
             case 1:
               cookCategory = "Pot and cooking shovel.";
@@ -359,6 +363,7 @@ public class Main{
           System.out.println("Press 5 - Tiger");
           System.out.println("Press 6 - Just Solutions!");
           userInput = Integer.parseInt(keyboard.readLine());
+          temp = userInput;
           switch(userInput){
             case 1:
               cookBrand = "Y YHY";
@@ -388,11 +393,11 @@ public class Main{
           itemName.add(newCooker.getName());
           itemAmount.add(newCooker.getAmount());
           itemPrice.add(newCooker.getPrice());
+          itemFeature.add(cookTexture);
           System.out.println(" ");
 
           System.out.println("Your final price for computers (exclude tax) is: $" + cart.getCookerfPrice());
           System.out.println("-------------------------------------------------------------------------------");
-          break;
       }else if(userInput == 4){
         System.out.println("---------------------------------------------------------");
         System.out.println("                    Items detail below                   ");
@@ -401,12 +406,14 @@ public class Main{
           String name;
           int amount;
           double price;
+          String feature;
           name = itemName.get(i);
           amount = itemAmount.get(i);
           price = itemPrice.get(i);
-          System.out.println(name + " x " + amount + " " + price);
+          feature = itemFeature.get(i);
+          System.out.println(feature + " " + name + " x " + amount + " $" + currencyFormat.format(Price)) + "/item");
         }
-        System.out.println("------------------------------------------");
+        System.out.println("-----------------------");
         fPrice = cart.getCookerfPrice() + cart.getClothingfPrice() + cart.getComputerfPrice();
         tax = fPrice * 0.13;
         priceIncludeTax = fPrice + tax;
@@ -433,6 +440,7 @@ public class Main{
               System.out.println("Try Again!");
               break;  
           }
+          break;
       }else{
         System.out.println("invalid");
       }

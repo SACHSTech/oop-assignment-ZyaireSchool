@@ -1,9 +1,21 @@
-[![Work in Repl.it](https://classroom.github.com/assets/work-in-replit-14baed9a392b3a25080506f3b7b6d57f295ec2978f6f33ec97e36a161684cbe9.svg)](https://classroom.github.com/online_ide?assignment_repo_id=4837924&assignment_repo_type=AssignmentRepo)
 # ICS4U OOP Assignment
 
-[*see instructions for details*](Instructions.md)
 
-*Insert Class Diagram here*  
+![My Diagram](src/Diagram.pdf)
 
 ## Summary
-*Include a brief summary that describes your system that your are modelling*
+*This is an online shopping system of Cos1co Shopping Center. User could buy clothings, computers and cookers. User could choose  what they want by selecting colors, brands, textures, types, categories and stuff. When finish purchasing, users could see what they bought and the total price, and they could choose payment methods.*
+
+Now we support **debit card** and **credit card**.
+
+### Clothing Section
+Costomers could select which spcific *types*, *colors*, *brands* and *sizes* they want to buy, and they could view the *price* and *warranty*, and choose the *amount*.
+
+### Computer Section
+Costomers could select which spcific *OS*, *Types*, *brands* and *names of computers* they want to buy, and they could view the *price* and *warranty*, and choose the *amount*.
+
+### Cooker Section
+Costomers could select which spcific *textures*, *categories* and *brands* they want to buy, and they could view the *price* and *warranty*, and choose the *amount*.
+
+### Shopping Cart
+There will be a *list of items* costomers bought, including the *amount* and the *sigle price*. And it will show the *total price*, *tax*, and *total after tax*.
