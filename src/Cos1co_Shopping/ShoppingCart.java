@@ -53,6 +53,10 @@ public class ShoppingCart{
     return cookers.size();
   }
 
+  /**
+  * Getter method for clothing price
+  * @return the final price of the clothing setcion
+  */
   public double getClothingfPrice(){
     double fPrice = 0.00;
     for(int i = 0; i < getAmtClo(); i++){
@@ -60,6 +64,11 @@ public class ShoppingCart{
     }
     return fPrice;
   }
+  
+  /**
+  * Getter method for computer price
+  * @return the final price of the computer setcion
+  */
   public double getComputerfPrice(){
     double fPrice = 0.00;
     for(int i = 0; i < getAmtCom(); i++){
@@ -67,6 +76,11 @@ public class ShoppingCart{
     }
     return fPrice;
   }
+
+  /**
+  * Getter method for cooker price
+  * @return the final price of the cooker setcion
+  */
   public double getCookerfPrice(){
     double fPrice = 0.00;
     for(int i = 0; i < getAmtCok(); i++){
