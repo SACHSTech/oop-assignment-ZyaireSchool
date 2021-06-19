@@ -1,7 +1,7 @@
 # ICS4U OOP Assignment
 
 
-![My Diagram](src/Diagram.pdf)
+<img src="src/Diagram.pdf"/>
 
 ## Summary
 *This is an online shopping system of Cos1co Shopping Center. User could buy clothings, computers and cookers. User could choose  what they want by selecting colors, brands, textures, types, categories and stuff. When finish purchasing, users could see what they bought and the total price, and they could choose payment methods.* In addition, the user will see the final price in each section, not include tax.
